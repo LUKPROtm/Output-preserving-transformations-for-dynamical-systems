@@ -1,5 +1,12 @@
 #### GENERIC FUNCTION TO FIND AUTOMATICALLY SYMBOLIC SOLUTIONS (FOR SIMPLE MODELS)#######################################################
 
+using SymPy
+using AbstractAlgebra
+using HomotopyContinuation
+using StructuralIdentifiability
+
+
+
 function find_transformations(model, names_map, with_states = false)
     id_funct = find_identifiable_functions(model , with_states = with_states)
     for var in names_map
